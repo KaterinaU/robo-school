@@ -8,12 +8,12 @@ import { MainTeachers } from './components/main-teachers';
 export const MainPage = () => {
   return (
     <>
-        <MainPromo />
-        <MainAbout />
-        <MainBenefits />
-        <MainTeachers />
-        <MainPackages />
-        <MainForm />
+      <MainPromo />
+      <MainAbout />
+      <MainBenefits />
+      <MainTeachers />
+      <MainPackages />
+      <MainForm />
     </>
   );
 };
