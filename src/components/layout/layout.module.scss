@@ -1,14 +1,10 @@
 .layout {
   display: flex;
   flex-direction: column;
-  min-height: 100hv;
 }
 
 .main {
   flex: 1;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 20px 0 20px;
 }
 
 @media (max-width: 768px) {
