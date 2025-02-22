@@ -1,7 +1,8 @@
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
+import { Footer } from './components/footer';
+import { Header } from './components/header';
 
 import styles from './layout.module.scss';
+
 
 export const Layout = ({ children }) => (
   <div className={styles.layout}>
