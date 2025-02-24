@@ -1,23 +1,22 @@
-export const Button = ({ children, variant, additionalClassname, ...rest }) => {
+import styles from './button.module.scss';
+
+export const Button = ({ variant = 'primary', additionalClassname, children, ...rest }) => {
   const createButtonVariant = () => {
-    switch (true) {
-      case variant === 'text':
+    switch (variant) {
+      case 'primary':
+        return `${styles.button} ${styles.primary}`;
+      case 'secondary':
+        return `${styles.button} ${styles.secondary}`;
+      case 'text':
         return `${styles.text}`;
-      case variant === 'dark':
-        return `${styles.button} ${styles.dark}`;
       default:
         return styles.button;
     }
   };
 
   const createButtonClassname = () => {
-    const baseClassname = `${createButtonVariant()}`;
-
-    if (additionalClassname) {
-      return `${baseClassname} ${additionalClassname}`;
-    }
-
-    return baseClassname;
+    const baseClass = createButtonVariant();
+    return additionalClassname ? `${baseClass} ${additionalClassname}` : baseClass;
   };
 
   return (
