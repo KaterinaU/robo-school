@@ -16,7 +16,7 @@
   background-color: $controls-bg-primary;
 
   &:hover {
-    background-color: $hover-bg-primary;
+    background-color: $controls-bg-primary-hover;
   }
 }
 
@@ -24,10 +24,14 @@
   background-color: $controls-bg-tertiary;
 
   &:hover {
-    background-color: $hover-color-tertiary;
+    background-color: $controls-color-tertiary-hover;
   }
 }
 
 .text {
   color: $text-color-accent;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
