@@ -1,0 +1,37 @@
+@use '@/styles/variables.scss' as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 54px;
+  border-radius: 5px;
+  gap: 10px;
+  font-size: 18px;
+  transition: background-color 0.6s;
+  color: $text-color-secondary;
+}
+
+.primary {
+  background-color: $controls-bg-primary;
+
+  &:hover {
+    background-color: $controls-bg-primary-hover;
+  }
+}
+
+.secondary {
+  background-color: $controls-bg-tertiary;
+
+  &:hover {
+    background-color: $controls-color-tertiary-hover;
+  }
+}
+
+.text {
+  color: $text-color-accent;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
