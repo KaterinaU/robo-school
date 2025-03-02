@@ -7,12 +7,8 @@ export const BenefitItem = ({ benefitItemData: { id, subtitle, description, tool
   return (
     <div key={id} className={styles.benefitItem}>
       <div className={styles.subtitleContainer}>
-        <h3 className={styles.subtitle}>
-          {subtitle}
-        </h3>
-        {tooltip?.length && (
-          <Tooltip text={tooltip} icon={<TooltipIcon />} />
-        )}
+        <h3 className={styles.subtitle}>{subtitle}</h3>
+        {tooltip?.length && <Tooltip text={tooltip} icon={<TooltipIcon />} />}
       </div>
       <p className={styles.description}>{description}</p>
     </div>
