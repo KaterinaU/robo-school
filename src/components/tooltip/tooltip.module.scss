@@ -1,0 +1,46 @@
+@use '@/styles/variables.scss' as *;
+
+.tooltipContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipTrigger {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltipContent {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-5%);
+  padding: 15px 20px;
+  background-color: $bg-color-primary;
+  color: $text-color-primary;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+}
+
+.tooltipContainer:hover .tooltipContent {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .tooltipContent {
+    top: -80px;
+    left: -120%;
+    transform: translateX(-50%);
+  }
+}
+

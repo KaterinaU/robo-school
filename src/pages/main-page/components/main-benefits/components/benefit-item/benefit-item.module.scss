@@ -1,0 +1,27 @@
+@use '@/styles/variables.scss' as *;
+
+.benefitItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 360px;
+}
+
+.subtitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: $text-color-primary;
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: 24px;
+  font-size: 18px;
+  color: $text-color-tertiary;
+}
