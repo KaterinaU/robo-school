@@ -8,7 +8,6 @@
     .title {
       font-size: 50px;
       font-weight: 600;
-      text-align: center;
     }
     .items {
       display: flex;
@@ -36,5 +35,10 @@
 @media (max-width: 768px) {
   .profit {
     padding: 40px 0;
+  }
+  .wrapper {
+    .title {
+      text-align: center;
+    }
   }
 }
