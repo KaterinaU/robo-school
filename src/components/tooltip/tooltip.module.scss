@@ -1,0 +1,36 @@
+@use '@/styles/variables.scss' as *;
+
+.tooltipContainer {
+  position: absolute;
+  cursor: pointer;
+  padding: 10px;
+  bottom: 10%;
+}
+.tooltipTrigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.tooltipContent {
+  position: absolute;
+  width: max-content;
+  max-width: 260px;
+  bottom: 100%;
+  background-color: $bg-color-primary;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px 0 $shadow-light;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .tooltipContent {
+    font-size: 14px;
+    left: -150px;
+  }
+}
