@@ -4,30 +4,31 @@
   display: flex;
   flex-direction: column;
   flex-basis: 360px;
-}
 
-.subtitleContainer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+  .subtitle {
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+  }
 
-.subtitle {
-  font-size: 24px;
-  font-weight: 600;
-  color: $text-color-primary;
-  white-space: nowrap;
-}
-
-.description {
-  margin-top: 24px;
-  font-size: 18px;
-  color: $text-color-tertiary;
+  .description {
+    font-size: 18px;
+    color: $text-color-tertiary;
+    margin-top: 24px;
+  }
 }
 
 @media (max-width: 768px) {
   .benefitItem {
-    align-items: center;
     text-align: center;
+
+    .subtitle {
+      font-size: 20px;
+    }
+
+    .description {
+      font-size: 16px;
+      margin-top: 10px;
+    }
   }
 }
