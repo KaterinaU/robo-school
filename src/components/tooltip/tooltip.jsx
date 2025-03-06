@@ -7,23 +7,22 @@ import styles from './tooltip.module.scss';
 export const Tooltip = ({ text }) => {
   const [isShowTooltip, setIsShowTooltip] = useState(false);
 
-  const onMouseEnterHandler = () => {
+  const handleMouseEnter = () => {
     setIsShowTooltip(true);
   };
 
-  const onMouseLeaveHandler = () => {
+  const handleMouseLeave = () => {
     setIsShowTooltip(false);
   };
 
   return (
     <span
-      className={styles.tooltipContainer}
-      onMouseEnter={onMouseEnterHandler}
-      onMouseLeave={onMouseLeaveHandler}
+      className={styles.tooltip}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <span className={styles.tooltipTrigger}>
-        <TooltipIcon />
-      </span>
+      <TooltipIcon />
+
       {isShowTooltip && <span className={styles.tooltipContent}>{text}</span>}
     </span>
   );
