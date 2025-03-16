@@ -23,23 +23,22 @@
 
   &:focus {
     outline: none;
-    border-color: $controls-bg-primary;
+    border-color: $bg-color-primary;
     box-shadow: 0 0 0 2px rgba($controls-bg-primary, 0.2);
   }
 
   &::placeholder {
-    color: rgba($text-color-primary, 0.5);
+    color: rgba(green, 0.5);
   }
 
   &.error {
-    border-color: $controls-color-secondary;
-    background-color: rgba($controls-bg-primary, 0.1);
+    border-color: $controls-bg-secondary;
+    background-color: rgba($controls-bg-secondary, 0.1);
   }
 }
 
 .errorMessage {
   display: block;
-  margin-top: 0.5rem;
-  color: $text-color-accent;
+  color: $text-color-secondary;
   font-size: 0.75rem;
 }
