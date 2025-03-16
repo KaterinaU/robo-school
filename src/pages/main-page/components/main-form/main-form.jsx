@@ -1,10 +1,27 @@
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import { Button } from '@/components/button';
 import { Container } from '@/components/container';
 import { Input } from '@/components/input';
 
+import { schema } from './helpers/schema';
+
 import styles from './main-form.module.scss';
 
 export const MainForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    mode: 'onBlur',
+  });
+
+  const onSubmit = (data) => {
+    console.log('Данные формы:', data);
+  };
   return (
     <section className={styles.course}>
       <Container>
@@ -13,32 +30,30 @@ export const MainForm = () => {
             <h2 className={styles.title}>Запишитесь на курс со скидкой 10%</h2>
             <p className={styles.description}>Акция действительна до 10 марта 2022 года</p>
           </div>
-          <div className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
             <Input
               id="name"
               type="name"
               placeholder="Имя"
-              /* register={register}
-               error={errors.email}*/
+              register={register}
+              error={errors.name}
             />
             <Input
               id="phone"
               type="tel"
               placeholder="Телефон"
-              /* register={register}
-               error={errors.email}*/
+              register={register}
+              error={errors.phone}
             />
             <Input
               id="email"
               type="email"
               placeholder="E-mail"
-              /* register={register}
-               error={errors.email}*/
+              register={register}
+              error={errors.email}
             />
-            <Button variant="secondary">
-              Оформить заявку
-            </Button>
-          </div>
+            <Button variant="secondary">Оформить заявку</Button>
+          </form>
         </div>
       </Container>
     </section>
