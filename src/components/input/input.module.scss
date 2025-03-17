@@ -28,7 +28,7 @@
   }
 
   &::placeholder {
-    color: rgba(green, 0.5);
+    color: rgba($text-color-primary, 0.5);
   }
 
   &.error {
