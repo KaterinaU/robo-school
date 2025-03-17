@@ -9,6 +9,14 @@
       font-size: 50px;
       font-weight: 600;
     }
+    .items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      gap: 40px;
+    }
   }
 }
 
@@ -27,5 +35,10 @@
 @media (max-width: 768px) {
   .profit {
     padding: 40px 0;
+  }
+  .wrapper {
+    .title {
+      text-align: center;
+    }
   }
 }
