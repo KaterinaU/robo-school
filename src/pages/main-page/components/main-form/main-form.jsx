@@ -20,7 +20,7 @@ export const MainForm = () => {
   });
 
   const onSubmit = (data) => {
-    console.log('Данные формы:', data);
+    return data;
   };
   return (
     <section className={styles.course}>
