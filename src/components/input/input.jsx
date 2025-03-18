@@ -1,4 +1,4 @@
-import styles from './Input.module.scss';
+import styles from './input.module.scss';
 
 export const Input = ({ id, type = 'text', placeholder, register, error, label, ...rest }) => {
   return (
