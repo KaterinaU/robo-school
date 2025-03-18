@@ -1,0 +1,78 @@
+.teachers {
+  padding: 20px;
+}
+
+.teacherCard {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.teacherPhoto {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.discr {
+  text-align: left;
+}
+
+.teacherName {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.teacherDesc {
+  margin: 10px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.detailsButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.navButtonNext {
+  right: 10px;
+}
+
+.navButtonPrev {
+  left: 10px;
+}
+
+@media (max-width: 768px) {
+  .navButton {
+    display: none;
+  }
+}
