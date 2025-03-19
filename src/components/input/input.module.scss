@@ -2,43 +2,41 @@
 
 .inputWrapper {
   width: 100%;
-}
 
-.label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  color: $text-color-primary;
-}
-
-.input {
-  width: 100%;
-  padding: 19px 20px;
-  border: 1px solid $controls-bg-quaternary;
-  border-radius: 4px;
-  background-color: $controls-bg-quaternary;
-  color: $text-color-primary;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-
-  &:focus {
-    outline: none;
-    border-color: $bg-color-primary;
-    box-shadow: 0 0 0 2px rgba($controls-bg-primary, 0.2);
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: $text-color-primary;
   }
 
-  &::placeholder {
-    color: rgba($text-color-primary, 0.5);
-  }
+  .input {
+    width: 100%;
+    padding: 20px;
+    background-color: $controls-bg-quaternary;
+    color: $text-color-primary;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
 
-  &.error {
-    border-color: $controls-bg-secondary;
-    background-color: rgba($controls-bg-secondary, 0.1);
+    &:focus {
+      outline: none;
+      border-color: $bg-color-primary;
+      box-shadow: 0 0 0 2px rgba($controls-bg-primary, 0.2);
+    }
+
+    &::placeholder {
+      color: rgba($text-color-primary, 0.5);
+    }
+
+    &.error {
+      border-color: $controls-bg-secondary;
+      background-color: rgba($controls-bg-secondary, 0.1);
+    }
   }
 }
 
 .errorMessage {
   display: block;
   color: $text-color-secondary;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
