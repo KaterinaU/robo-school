@@ -35,24 +35,26 @@ export const MainForm = () => {
               id="name"
               type="name"
               placeholder="Имя"
-              register={register}
+              {...register('name')}
               error={errors.name}
             />
             <Input
               id="phone"
               type="tel"
               placeholder="Телефон"
-              register={register}
+              {...register('phone')}
               error={errors.phone}
             />
             <Input
               id="email"
               type="email"
               placeholder="E-mail"
-              register={register}
+              {...register('email')}
               error={errors.email}
             />
-            <Button variant="secondary">Оформить заявку</Button>
+            <Button variant="secondary" additionalClassname={styles.button}>
+              Оформить заявку
+            </Button>
           </form>
         </div>
       </Container>
