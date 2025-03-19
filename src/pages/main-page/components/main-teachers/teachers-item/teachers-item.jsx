@@ -23,7 +23,7 @@ export const Teachers = () => {
           nextEl: `.${styles.navButtonNext}`,
           prevEl: `.${styles.navButtonPrev}`,
         }}
-        scrollbar={{ draggable: true }}
+        scrollbar={{ draggable: true, dragSize: 260}}
         breakpoints={{
           320: {
             slidesPerView: 1,
