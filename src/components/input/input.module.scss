@@ -2,6 +2,7 @@
 
 .inputWrapper {
   width: 100%;
+  position: relative;
 
   .label {
     display: block;
@@ -30,13 +31,15 @@
 
     &.error {
       border-color: $controls-bg-secondary;
-      background-color: rgba($controls-bg-secondary, 0.1);
     }
   }
 }
 
 .errorMessage {
-  display: block;
-  color: $text-color-secondary;
+  position: absolute;
+  pointer-events: none;
+  color: $text-color-accent;
   font-size: 12px;
+  top: 5px;
+  left: 10px;
 }
