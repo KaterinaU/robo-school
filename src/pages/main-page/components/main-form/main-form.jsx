@@ -16,7 +16,6 @@ export const MainForm = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
-    mode: 'onBlur',
   });
 
   const onSubmit = (data) => {
@@ -30,10 +29,10 @@ export const MainForm = () => {
             <h2 className={styles.title}>Запишитесь на курс со скидкой 10%</h2>
             <p className={styles.description}>Акция действительна до 10 марта 2022 года</p>
           </div>
-          <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <Input
               id="name"
-              type="name"
+              type="text"
               placeholder="Имя"
               {...register('name')}
               error={errors.name}
