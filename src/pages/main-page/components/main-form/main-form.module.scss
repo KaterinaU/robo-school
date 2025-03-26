@@ -11,7 +11,9 @@
 
   .wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 0 55px;
+    gap: 60px;
 
     .text {
       display: flex;
@@ -37,7 +39,6 @@
       flex-direction: column;
       gap: 10px;
       width: 500px;
-      max-width: 500px;
 
       .button {
         padding: 19px;
