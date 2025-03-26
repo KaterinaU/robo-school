@@ -34,6 +34,7 @@ export const MainForm = () => {
               id="name"
               type="text"
               placeholder="Имя"
+              inputRef={register('name').ref}
               {...register('name')}
               error={errors.name}
             />
@@ -41,6 +42,7 @@ export const MainForm = () => {
               id="phone"
               type="tel"
               placeholder="Телефон"
+              inputRef={register('phone').ref}
               {...register('phone')}
               error={errors.phone}
             />
@@ -48,6 +50,7 @@ export const MainForm = () => {
               id="email"
               type="email"
               placeholder="E-mail"
+              inputRef={register('email').ref}
               {...register('email')}
               error={errors.email}
             />
