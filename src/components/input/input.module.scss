@@ -1,7 +1,6 @@
 @use '@/styles/variables.scss' as *;
 
 .inputWrapper {
-  width: 100%;
   position: relative;
 
   .label {
@@ -14,9 +13,9 @@
   .input {
     width: 100%;
     padding: 20px;
+    border-radius: 4px;
     background-color: $controls-bg-quaternary;
     color: $text-color-primary;
-    font-size: 16px;
     transition: border-color 0.3s ease;
 
     &:focus {
