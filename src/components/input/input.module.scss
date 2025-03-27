@@ -18,12 +18,6 @@
     background-color: $controls-bg-quaternary;
     color: $text-color-primary;
 
-    &:focus {
-      outline: none;
-      border-color: $bg-color-primary;
-      box-shadow: 0 0 0 2px rgba($controls-bg-primary, 0.2);
-    }
-
     &::placeholder {
       color: rgba($text-color-primary, 0.5);
     }
