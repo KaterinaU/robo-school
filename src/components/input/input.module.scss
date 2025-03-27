@@ -12,11 +12,11 @@
 
   .input {
     width: 100%;
-    padding: 20px;
-    border-radius: 4px;
+    padding: 19px;
+    font-size: 18px;
+    border-radius: 5px;
     background-color: $controls-bg-quaternary;
     color: $text-color-primary;
-    transition: border-color 0.3s ease;
 
     &:focus {
       outline: none;
@@ -26,10 +26,6 @@
 
     &::placeholder {
       color: rgba($text-color-primary, 0.5);
-    }
-
-    &.error {
-      border-color: $controls-bg-secondary;
     }
   }
 }
