@@ -34,24 +34,21 @@ export const MainForm = () => {
               id="name"
               type="text"
               placeholder="Имя"
-              inputRef={register('name').ref}
-              {...register('name')}
+              register={register('name')}
               error={errors.name}
             />
             <Input
               id="phone"
               type="tel"
               placeholder="Телефон"
-              inputRef={register('phone').ref}
-              {...register('phone')}
+              register={register('phone')}
               error={errors.phone}
             />
             <Input
               id="email"
               type="email"
               placeholder="E-mail"
-              inputRef={register('email').ref}
-              {...register('email')}
+              register={register('email')}
               error={errors.email}
             />
             <Button variant="secondary" additionalClassname={styles.button}>
