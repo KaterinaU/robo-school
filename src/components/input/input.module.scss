@@ -1,0 +1,34 @@
+@use '@/styles/variables.scss' as *;
+
+.inputWrapper {
+  position: relative;
+
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: $text-color-primary;
+  }
+
+  .input {
+    width: 100%;
+    padding: 19px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: $controls-bg-quaternary;
+    color: $text-color-primary;
+
+    &::placeholder {
+      color: rgba($text-color-primary, 0.5);
+    }
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  pointer-events: none;
+  color: $text-color-accent;
+  font-size: 12px;
+  top: 5px;
+  left: 10px;
+}
