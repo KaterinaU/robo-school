@@ -9,7 +9,7 @@ export const MainTeachers = () => {
       <Container>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Профессиональные тренеры</h2>
-          <Teachers/>
+          <Teachers />
         </div>
       </Container>
     </section>
