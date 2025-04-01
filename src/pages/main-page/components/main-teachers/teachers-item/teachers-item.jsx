@@ -6,24 +6,20 @@ import 'swiper/css/scrollbar';
 
 import { teachersImages } from '@/assets/images';
 import { Button } from '@/components/button';
+import { SwiperNavButtons } from '@/pages/main-page/components/main-teachers/helpers/swiper-nav-buttons';
 
 import teachersData from '../../../../../api/teachers.json';
 
 import styles from './teachers-item.module.scss';
 
 export const Teachers = () => {
-
   return (
     <section className={styles.teachers}>
       <Swiper
         modules={[Navigation, Scrollbar]}
         spaceBetween={20}
         slidesPerView={3}
-        navigation={{
-          nextEl: `.${styles.navButtonNext}`,
-          prevEl: `.${styles.navButtonPrev}`,
-        }}
-        scrollbar={{ draggable: true, dragSize: 260}}
+        scrollbar={{ draggable: true, dragSize: 260 }}
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -44,18 +40,16 @@ export const Teachers = () => {
                 alt={teacher.name}
                 className={styles.teacherPhoto}
               />
-              {/* Имя и описание */}
               <div className={styles.discr}>
-              <h3 className={styles.teacherName}>{teacher.name}</h3>
-              <p className={styles.teacherDesc}>{teacher.desc}</p>
-              <Button variant='text'>Подробнее</Button>
-            </div>
+                <h3 className={styles.teacherName}>{teacher.name}</h3>
+                <p className={styles.teacherDesc}>{teacher.desc}</p>
+                <Button variant="text">Подробнее</Button>
+              </div>
             </div>
           </SwiperSlide>
         ))}
+        <SwiperNavButtons />
       </Swiper>
-      <div className={`${styles.navButton} ${styles.navButtonNext}`} />
-      <div className={`${styles.navButton} ${styles.navButtonPrev}`} />
     </section>
   );
 };
