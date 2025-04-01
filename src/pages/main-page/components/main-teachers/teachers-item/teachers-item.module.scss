@@ -1,0 +1,36 @@
+.teachers {
+  padding: 20px;
+}
+
+.teacherCard {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.teacherPhoto {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.discr {
+  text-align: left;
+}
+
+.teacherName {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.teacherDesc {
+  margin: 10px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .navButton {
+    display: none;
+  }
+}
