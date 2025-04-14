@@ -1,55 +1,72 @@
-import { Navigation, Scrollbar } from 'swiper/modules';
+import { useEffect, useRef } from 'react';
+import { Mousewheel, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
+import 'swiper/scss';
+import 'swiper/scss/scrollbar';
+import 'swiper/scss/mousewheel';
 
-import { teachersImages } from '@/assets/images';
-import { Button } from '@/components/button';
-import { SwiperNavButtons } from '@/pages/main-page/components/main-teachers/helpers/swiper-nav-buttons';
+import teachersData from '@/api/teachers.json';
+import { ArrowLeftIcon } from '@/assets/icons/ArrowLeftIcon';
+import { ArrowRightIcon } from '@/assets/icons/ArrowRightIcon';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
-import teachersData from '../../../../../api/teachers.json';
+import { TeacherItem } from './teachers/TeacherItem';
 
 import styles from './teachers-item.module.scss';
 
 export const Teachers = () => {
+  const swiperRef = useRef(null);
+  const scrollbarRef = useRef(null);
+
+  const { isMobile } = useWindowSize();
+
+  const handleSwiperInit = (swiper) => {
+    swiperRef.current = swiper;
+  };
+
+  const handleSlide = (direction) => {
+    if (!swiperRef.current) return;
+    if (direction === 'prev') swiperRef.current.slidePrev();
+    if (direction === 'next') swiperRef.current.slideNext();
+  };
+
+  useEffect(() => {
+    if (swiperRef.current && scrollbarRef.current) {
+      swiperRef.current.update();
+    }
+  }, [isMobile]);
+
   return (
-    <section className={styles.teachers}>
+    <div className={styles.teachersWrapper}>
       <Swiper
-        modules={[Navigation, Scrollbar]}
+        modules={[Scrollbar, Mousewheel]}
         spaceBetween={20}
-        slidesPerView={3}
-        scrollbar={{ draggable: true, dragSize: 260 }}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+        slidesPerView={isMobile ? 'auto' : 3}
+        onBeforeInit={handleSwiperInit}
+        mousewheel={{ releaseOnEdges: true, forceToAxis: true }}
+        scrollbar={{
+          el: scrollbarRef.current,
+          draggable: true,
         }}
       >
         {teachersData.map((teacher) => (
-          <SwiperSlide key={teacher.id}>
-            <div className={styles.teacherCard}>
-              <img
-                src={teachersImages[teacher.imageName]}
-                alt={teacher.name}
-                className={styles.teacherPhoto}
-              />
-              <div className={styles.discr}>
-                <h3 className={styles.teacherName}>{teacher.name}</h3>
-                <p className={styles.teacherDesc}>{teacher.desc}</p>
-                <Button variant="text">Подробнее</Button>
-              </div>
-            </div>
+          <SwiperSlide key={teacher.id} className={styles.slide}>
+            <TeacherItem teacher={teacher} />
           </SwiperSlide>
         ))}
-        <SwiperNavButtons />
       </Swiper>
-    </section>
+
+      <div className={styles.controls}>
+        <div ref={scrollbarRef} className={styles.scrollbar}></div>
+        <div className={styles.arrows}>
+          <button className={styles.arrow} onClick={() => handleSlide('prev')}>
+            <ArrowLeftIcon />
+          </button>
+          <button className={styles.arrow} onClick={() => handleSlide('next')}>
+            <ArrowRightIcon />
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };

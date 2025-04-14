@@ -1,36 +1,77 @@
-.teachers {
-  padding: 20px;
+@use '@/styles/variables.scss' as *;
+
+.teachersWrapper {
+  position: relative;
+  padding-bottom: 100px;
+  margin-top: 60px;
 }
 
-.teacherCard {
-  text-align: center;
-  padding: 60px 0;
-  background-color: #fff;
+.slide {
+  max-width: 360px;
 }
 
-.teacherPhoto {
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
 
-.discr {
-  text-align: left;
-}
+  .scrollbar {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    max-width: 360px;
+    border-radius: 40px;
+    background-color: #14102414;
 
-.teacherName {
-  margin: 10px 0;
-  font-size: 1.2rem;
-}
+    :global {
+      .swiper-scrollbar-drag {
+        background-color: $controls-bg-tertiary;
+        border-radius: 40px;
+        cursor: grab;
+      }
+    }
+  }
 
-.teacherDesc {
-  margin: 10px 0;
-  color: #666;
-  font-size: 0.9rem;
+  .arrows {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 @media (max-width: 768px) {
-  .navButton {
-    display: none;
+  .teachersWrapper {
+    margin-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+
+    .arrows {
+      display: none;
+    }
+
+    .scrollbar {
+      width: calc(100% - 20px);
+      margin-left: 10px;
+    }
+  }
+
+  .slide {
+    max-width: 220px;
   }
 }
