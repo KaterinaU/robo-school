@@ -1,18 +1,15 @@
 import { useEffect, useRef } from 'react';
-import { Mousewheel, Scrollbar } from 'swiper/modules';
+import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/scss';
-import 'swiper/scss/scrollbar';
-import 'swiper/scss/mousewheel';
 
 import teachersData from '@/api/teachers.json';
 import { ArrowLeftIcon } from '@/assets/icons/ArrowLeftIcon';
 import { ArrowRightIcon } from '@/assets/icons/ArrowRightIcon';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
-import { TeacherItem } from './teachers/TeacherItem';
+import { TeacherItem } from './teachers/teacher-item';
 
-import styles from './teachers-item.module.scss';
+import styles from './teachers.module.scss';
 
 export const Teachers = () => {
   const swiperRef = useRef(null);
@@ -39,11 +36,10 @@ export const Teachers = () => {
   return (
     <div className={styles.teachersWrapper}>
       <Swiper
-        modules={[Scrollbar, Mousewheel]}
-        spaceBetween={20}
+        modules={[Scrollbar]}
+        spaceBetween={isMobile ? 20 : 40}
         slidesPerView={isMobile ? 'auto' : 3}
         onBeforeInit={handleSwiperInit}
-        mousewheel={{ releaseOnEdges: true, forceToAxis: true }}
         scrollbar={{
           el: scrollbarRef.current,
           draggable: true,
