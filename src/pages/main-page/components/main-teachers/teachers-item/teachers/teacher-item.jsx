@@ -1,7 +1,7 @@
 import { teachersImages } from '@/assets/images';
 import { Button } from '@/components/button';
 
-import styles from './teacher.module.scss';
+import styles from './teacher-item.module.scss';
 
 export const TeacherItem = ({ teacher: { id, name, imageName, desc } }) => {
   return (
