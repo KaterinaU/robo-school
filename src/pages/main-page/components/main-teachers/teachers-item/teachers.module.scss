@@ -29,13 +29,6 @@
     border-radius: 40px;
     background-color: #14102414;
 
-    :global {
-      .swiper-scrollbar-drag {
-        background-color: $controls-bg-tertiary;
-        border-radius: 40px;
-        cursor: grab;
-      }
-    }
   }
 
   .arrows {
