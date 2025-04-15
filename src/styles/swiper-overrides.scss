@@ -1,7 +1,7 @@
 @use '@/styles/variables.scss' as *;
 
 .swiper-scrollbar-drag {
-  background-color:$controls-bg-tertiary;
+  background-color: $controls-bg-tertiary;
   border-radius: 40px;
   cursor: grab;
 }
