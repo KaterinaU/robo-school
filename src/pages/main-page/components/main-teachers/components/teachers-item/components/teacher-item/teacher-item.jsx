@@ -1,5 +1,5 @@
-import { teachersImages } from '@/assets/images';
-import { Button } from '@/components/button';
+import { teachersImages } from '@/assets/images/index';
+import { Button } from '@/components/button/index';
 
 import styles from './teacher-item.module.scss';
 
