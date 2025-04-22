@@ -3,11 +3,10 @@ import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import teachersData from '@/api/teachers.json';
-import { ArrowLeftIcon } from '@/assets/icons/ArrowLeftIcon';
-import { ArrowRightIcon } from '@/assets/icons/ArrowRightIcon';
+import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/icons/index';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
-import { TeacherItem } from './teachers/teacher-item';
+import { TeacherItem } from './components/teacher-item/teacher-item';
 
 import styles from './teachers.module.scss';
 
@@ -17,21 +16,27 @@ export const Teachers = () => {
 
   const { isMobile } = useWindowSize();
 
-  const handleSwiperInit = (swiper) => {
+  const initSwiper = (swiper) => {
     swiperRef.current = swiper;
   };
 
-  const handleSlide = (direction) => {
-    if (!swiperRef.current) return;
-    if (direction === 'prev') swiperRef.current.slidePrev();
-    if (direction === 'next') swiperRef.current.slideNext();
+  const handleSlide = (direction) => () => {
+    if (!swiperRef.current) {
+      return;
+    }
+    if (direction === 'prev') {
+      swiperRef.current.slidePrev();
+    }
+    if (direction === 'next') {
+      swiperRef.current.slideNext();
+    }
   };
 
   useEffect(() => {
     if (swiperRef.current && scrollbarRef.current) {
       swiperRef.current.update();
     }
-  }, [isMobile]);
+  }, []);
 
   return (
     <div className={styles.teachersWrapper}>
@@ -39,7 +44,7 @@ export const Teachers = () => {
         modules={[Scrollbar]}
         spaceBetween={isMobile ? 20 : 40}
         slidesPerView={isMobile ? 'auto' : 3}
-        onBeforeInit={handleSwiperInit}
+        onBeforeInit={initSwiper}
         scrollbar={{
           el: scrollbarRef.current,
           draggable: true,
@@ -55,10 +60,10 @@ export const Teachers = () => {
       <div className={styles.controls}>
         <div ref={scrollbarRef} className={styles.scrollbar}></div>
         <div className={styles.arrows}>
-          <button className={styles.arrow} onClick={() => handleSlide('prev')}>
+          <button className={styles.arrow} onClick={handleSlide('prev')}>
             <ArrowLeftIcon />
           </button>
-          <button className={styles.arrow} onClick={() => handleSlide('next')}>
+          <button className={styles.arrow} onClick={handleSlide('next')}>
             <ArrowRightIcon />
           </button>
         </div>
