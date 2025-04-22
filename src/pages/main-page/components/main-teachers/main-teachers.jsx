@@ -1,6 +1,6 @@
 import { Container } from '@/components/container';
 
-import { Teachers } from './teachers-item';
+import { Teachers } from './components/teachers-item/index';
 
 import styles from './main-teachers.module.scss';
 
