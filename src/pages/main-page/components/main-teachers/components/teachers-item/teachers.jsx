@@ -20,7 +20,7 @@ export const Teachers = () => {
     swiperRef.current = swiper;
   };
 
-  const handleSlide = (direction) => () => {
+  const createSlideChangeHandler = (direction) => () => {
     if (!swiperRef.current) {
       return;
     }
@@ -34,7 +34,14 @@ export const Teachers = () => {
 
   useEffect(() => {
     if (swiperRef.current && scrollbarRef.current) {
-      swiperRef.current.update();
+      const swiper = swiperRef.current;
+      swiper.params.scrollbar.el = scrollbarRef.current;
+
+      if (!swiper.scrollbar.el) {
+        swiper.scrollbar.init();
+      }
+
+      swiper.scrollbar.updateSize();
     }
   }, []);
 
@@ -51,7 +58,7 @@ export const Teachers = () => {
         }}
       >
         {teachersData.map((teacher) => (
-          <SwiperSlide key={teacher.id} className={styles.slide}>
+          <SwiperSlide key={teacher.id}>
             <TeacherItem teacher={teacher} />
           </SwiperSlide>
         ))}
@@ -60,10 +67,10 @@ export const Teachers = () => {
       <div className={styles.controls}>
         <div ref={scrollbarRef} className={styles.scrollbar}></div>
         <div className={styles.arrows}>
-          <button className={styles.arrow} onClick={handleSlide('prev')}>
+          <button className={styles.arrow} onClick={createSlideChangeHandler('prev')}>
             <ArrowLeftIcon />
           </button>
-          <button className={styles.arrow} onClick={handleSlide('next')}>
+          <button className={styles.arrow} onClick={createSlideChangeHandler('next')}>
             <ArrowRightIcon />
           </button>
         </div>
