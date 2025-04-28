@@ -21,7 +21,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-grow: 1;
 
     .name {
       font-size: 24px;
@@ -29,6 +28,7 @@
     }
 
     .post {
+      min-height: 60px;
       font-size: 18px;
       color: $text-color-tertiary;
       margin-bottom: 20px;
@@ -43,10 +43,6 @@
 
 @media (max-width: 768px) {
   .teacherItem {
-    .img {
-      height: 306px;
-    }
-
     .info {
       .name {
         font-size: 20px;
