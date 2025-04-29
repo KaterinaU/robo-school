@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import teachersData from '@/api/teachers.json';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/icons/index';
+import { Container } from '@/components/container';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
 import { TeacherItem } from './components/teacher-item/teacher-item';
@@ -46,35 +47,37 @@ export const Teachers = () => {
   }, []);
 
   return (
-    <div className={styles.teachersWrapper}>
-      <Swiper
-        modules={[Scrollbar]}
-        spaceBetween={isMobile ? 20 : 40}
-        slidesPerView={isMobile ? 'auto' : 3}
-        onBeforeInit={initSwiper}
-        scrollbar={{
-          el: scrollbarRef.current,
-          draggable: true,
-        }}
-      >
-        {teachersData.map((teacher) => (
-          <SwiperSlide key={teacher.id}>
-            <TeacherItem teacher={teacher} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <Container>
+      <div className={styles.teachersWrapper}>
+        <Swiper
+          modules={[Scrollbar]}
+          spaceBetween={isMobile ? 20 : 40}
+          slidesPerView={isMobile ? 'auto' : 3}
+          onBeforeInit={initSwiper}
+          scrollbar={{
+            el: scrollbarRef.current,
+            draggable: true,
+          }}
+        >
+          {teachersData.map((teacher) => (
+            <SwiperSlide key={teacher.id}>
+              <TeacherItem teacher={teacher} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <div className={styles.controls}>
-        <div ref={scrollbarRef} className={styles.scrollbar}></div>
-        <div className={styles.arrows}>
-          <button className={styles.arrow} onClick={createSlideChangeHandler('prev')}>
-            <ArrowLeftIcon />
-          </button>
-          <button className={styles.arrow} onClick={createSlideChangeHandler('next')}>
-            <ArrowRightIcon />
-          </button>
+        <div className={styles.controls}>
+          <div ref={scrollbarRef} className={styles.scrollbar}></div>
+          <div className={styles.arrows}>
+            <button className={styles.arrow} onClick={createSlideChangeHandler('prev')}>
+              <ArrowLeftIcon />
+            </button>
+            <button className={styles.arrow} onClick={createSlideChangeHandler('next')}>
+              <ArrowRightIcon />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
