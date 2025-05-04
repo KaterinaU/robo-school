@@ -53,6 +53,8 @@
   .teachersWrapper {
     margin-top: 40px;
     padding-bottom: 70px;
+    margin-left: -10px;
+    width: calc(100% + 20px);
 
     .slide {
       max-width: 220px;
@@ -67,7 +69,8 @@
       }
 
       .scrollbar {
-        width: calc(100% - 20px);
+        max-width: none;
+        width: calc(100%);
       }
     }
   }

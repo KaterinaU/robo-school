@@ -60,7 +60,7 @@ export const Teachers = () => {
           }}
         >
           {teachersData.map((teacher) => (
-            <SwiperSlide key={teacher.id}>
+            <SwiperSlide key={teacher.id} className={styles.slide}>
               <TeacherItem teacher={teacher} />
             </SwiperSlide>
           ))}
