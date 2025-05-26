@@ -1,0 +1,24 @@
+@use '@/styles/variables.scss' as *;
+
+.tabs {
+  display: flex;
+  gap: 120px;
+  border-bottom: 1px solid rgba(20, 16, 36, 0.11);
+  padding-bottom: 20px;
+}
+
+.tab {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.active {
+  color: $text-color-accent;
+  transition: color 0.3s;
+}
+
+.inactive {
+  color: $text-color-primary;
+  font-weight: 400;
+  transition: color 0.3s;
+}
